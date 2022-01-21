@@ -13,9 +13,13 @@ onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite")
 var mov_direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
 
+#func _process(delta):
+	#print(get_last_slide_collision())
+
 func _physics_process(_delta: float) -> void:
 	velocity = move_and_slide(velocity)
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
+
 
 func move() -> void:
 	mov_direction = mov_direction.normalized()

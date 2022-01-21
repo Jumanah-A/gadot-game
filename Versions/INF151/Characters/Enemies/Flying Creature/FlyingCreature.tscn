@@ -89,7 +89,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -219,7 +219,6 @@ tracks/2/keys = {
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" parent="." index="1"]
-visible = false
 frames = SubResource( 5 )
 
 [node name="CollisionShape2D" parent="." index="2"]
