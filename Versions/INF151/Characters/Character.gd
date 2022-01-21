@@ -1,11 +1,12 @@
 extends KinematicBody2D
 class_name Character
 
-const FRICTION: float = 0.15
+const FRICTION: float = 0.25
 
-export(int) var hp: int = 3
+export(int) var hp: int = 3 setget set_hp
+signal hp_changed(new_hp)
 export(int) var acceleration: int = 55
-export(int) var max_speed: int = 90
+export(int) var max_speed: int = 95
 
 onready var state_machine: Node = get_node("FiniteStateMachine")
 onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite")
@@ -28,7 +29,7 @@ func move() -> void:
 
 
 func take_damage(dam: int, dir: Vector2, force: int) -> void:
-	hp -= dam
+	self.hp -= dam
 	print(hp)
 	if hp > 0:
 		state_machine.set_state(state_machine.states.hurt)
@@ -36,3 +37,8 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 	else:
 		state_machine.set_state(state_machine.states.dead)
 		velocity += dir * force * 2
+
+
+func set_hp(new_hp: int) -> void:
+	hp = new_hp
+	emit_signal("hp_changed", new_hp)
