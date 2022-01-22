@@ -276,7 +276,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 17.8347, 29.3006 )
+extents = Vector2( 38.928, 12.143 )
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -747,12 +747,12 @@ anims/run = SubResource( 4 )
 [node name="Sword" type="Node2D" parent="." index="4"]
 
 [node name="Node2D" type="Node2D" parent="Sword" index="0"]
-position = Vector2( 2.329, -1.343 )
-rotation = 1.26885
+position = Vector2( -3.364, -9.857 )
+rotation = 1.06465
 
 [node name="Sprite" type="Sprite" parent="Sword/Node2D" index="0"]
 position = Vector2( 5, -4 )
-rotation = -1.39626
+rotation = -1.12574
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 13 )
 offset = Vector2( 0, -11 )
@@ -765,8 +765,8 @@ anims/attack2 = SubResource( 9 )
 
 [node name="SlashSprite" type="Sprite" parent="Sword" index="2"]
 visible = false
-position = Vector2( 24, 4.5 )
-scale = Vector2( 1.28125, 2.5625 )
+position = Vector2( 41, 5.5 )
+scale = Vector2( 1.28125, 0.8125 )
 texture = ExtResource( 14 )
 hframes = 3
 
@@ -779,7 +779,7 @@ collision_mask = 4
 script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/Attack1Hitbox" index="0"]
-position = Vector2( 24.7, 2.645 )
+position = Vector2( 27.18, 2.327 )
 rotation = -0.127409
 scale = Vector2( 0.999999, 0.999999 )
 shape = SubResource( 8 )
