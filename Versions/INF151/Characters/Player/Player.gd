@@ -53,6 +53,7 @@ func get_input() -> void:
 		$SlowMoveOnAttackTimer.start()
 		sword_animation_player.play("attack1")
 		IsAttacking1 = true
+		yield(get_tree().create_timer(0.25), "timeout")
 		SwordPoints -= 1
 	elif Input.is_action_just_pressed("ui_attack") and sword_animation_player.is_playing() and SwordPoints == 1:
 		$AttackResetTimer.start()

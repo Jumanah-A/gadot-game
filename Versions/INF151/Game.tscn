@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/0x72_DungeonTilesetII_v1.4.png" type="Texture" id=2]
@@ -1227,6 +1227,10 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 52/z_index = 0
 
+[sub_resource type="Environment" id=55]
+background_mode = 4
+glow_enabled = true
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -1289,5 +1293,8 @@ max_speed = 50
 position = Vector2( 271, 63 )
 acceleration = 30
 max_speed = 50
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 55 )
 
 [connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]
