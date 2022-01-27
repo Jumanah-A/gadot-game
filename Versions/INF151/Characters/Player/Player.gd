@@ -10,6 +10,15 @@ onready var sword: Node2D = get_node("Sword")
 onready var sword_hitbox: Area2D = get_node("Sword/Attack1Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 
+#dash code
+
+onready var dash = $Dash
+onready var sprite = $Sprite
+const move_speed = 2000
+const dash_speed = 10000
+const dash_duration = 0.2
+#onready var sprite: Sprite = get_node("Sprite");
+
 func _process(_delta: float) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
 	
@@ -24,10 +33,23 @@ func _process(_delta: float) -> void:
 		sword.scale.y = -1
 	elif sword.scale.y == -1 and mouse_direction.x > 0:
 		sword.scale.y = 1
+#	DASH LOGIC
+	var speed = dash_speed if dash.is_dashing() else move_speed
+	
+	mov_direction = get_move_direction().normalized()
+	velocity = mov_direction * speed * _delta
+	
+	velocity = move_and_slide(velocity)
+	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
+	
+#	restrict charcter to screen size
+	position += velocity * _delta
+	position.x = clamp(position.x, 0, get_viewport_rect().size.x)
+	position.y = clamp(position.y, 0, get_viewport_rect().size.y)
 
 
 func move() -> void:
-	mov_direction = mov_direction.normalized()
+	mov_direction = get_move_direction().normalized()
 	velocity += mov_direction * acceleration
 	if IsAttacking1:
 		velocity = velocity.clamped(attacking_move_speed)
@@ -48,6 +70,9 @@ func get_input() -> void:
 		mov_direction += Vector2.RIGHT
 	if Input.is_action_pressed("ui_up"):
 		mov_direction += Vector2.UP
+#	DASH
+	if Input.is_action_just_pressed("dash") && dash.can_dash && !dash.is_dashing():
+		dash.start_dash(sprite, dash_duration)
 	
 	if Input.is_action_just_pressed("ui_attack") and not sword_animation_player.is_playing() and SwordPoints == 2:
 		$AttackResetTimer.start()
@@ -76,3 +101,10 @@ func _on_AttackResetTimer_timeout():
 func _on_SlowMoveOnAttackTimer_timeout():
 	IsAttacking1 = false
 	IsAttacking2 = false
+
+
+func get_move_direction():
+	return Vector2(
+		int(Input.is_action_pressed("ui_right"))- int(Input.is_action_pressed("ui_left")),
+		int(Input.is_action_pressed("ui_down"))- int(Input.is_action_pressed("ui_up"))
+	)
