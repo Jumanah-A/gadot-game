@@ -4,6 +4,7 @@ var SwordPoints = 2
 var IsAttacking1 = false
 var IsAttacking2 = false
 export(int) var attacking_move_speed: int = 45
+#testing commit
 
 onready var sword: Node2D = get_node("Sword")
 onready var sword_hitbox: Area2D = get_node("Sword/Attack1Hitbox")
