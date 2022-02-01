@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1643668830.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello, I am the NPC."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1643668846.json",
+		"name": "timeline-1"
+	}
+}
