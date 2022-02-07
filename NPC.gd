@@ -30,3 +30,5 @@ func _on_NPC_body_entered(body):
 func _on_NPC_body_exited(body):
 	if body.name == 'Player':
 		active = false
+
+#a comment
