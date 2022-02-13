@@ -1297,4 +1297,9 @@ max_speed = 50
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 55 )
 
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
 [connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]
