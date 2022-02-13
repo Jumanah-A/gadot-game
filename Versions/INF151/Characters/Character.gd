@@ -6,7 +6,7 @@ const FRICTION: float = 0.25
 export(int) var hp: int = 3 setget set_hp
 signal hp_changed(new_hp)
 export(int) var acceleration: int = 55
-export(int) var max_speed: int = 95
+export(int) var max_speed: int = 55
 
 onready var state_machine: Node = get_node("FiniteStateMachine")
 onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite")
