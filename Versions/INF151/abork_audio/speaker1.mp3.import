@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/speaker1.mp3-133bba010d670baac3976defe611c9ee.mp3str"
+
+[deps]
+
+source_file="res://abork_audio/speaker1.mp3"
+dest_files=[ "res://.import/speaker1.mp3-133bba010d670baac3976defe611c9ee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

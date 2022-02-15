@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/guitar2.mp3-5e198483d82cc99be910fc9025ee8b1d.mp3str"
+
+[deps]
+
+source_file="res://abork_audio/guitar2.mp3"
+dest_files=[ "res://.import/guitar2.mp3-5e198483d82cc99be910fc9025ee8b1d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
