@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/History of the Ancients.ogg-86eb7fce3d8dda4c16f2603dc60bcdf1.oggstr"
+
+[deps]
+
+source_file="res://assets/Scythuz/History of the Ancients.ogg"
+dest_files=[ "res://.import/History of the Ancients.ogg-86eb7fce3d8dda4c16f2603dc60bcdf1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
