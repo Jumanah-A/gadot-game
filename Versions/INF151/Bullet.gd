@@ -22,4 +22,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Bullet_body_entered(_body):
+	Global.enemy_killed()
 	queue_free()

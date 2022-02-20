@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/0x72_DungeonTilesetII_v1.4.png" type="Texture" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://Art/red_room_tiles/red_room_down_left_corner.png" type="Texture" id=22]
 [ext_resource path="res://Art/red_room_tiles/red_room_down_right_corner.png" type="Texture" id=23]
 [ext_resource path="res://Art/red_room_tiles/red_room_down_left_inner_corner.png" type="Texture" id=24]
+
+[sub_resource type="Theme" id=99]
 
 [sub_resource type="NavigationPolygon" id=56]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1484,6 +1486,26 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="UI/HealthBar"]
 
+[node name="UserInterface" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = SubResource( 99 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="UI/UserInterface"]
+anchor_left = 0.883
+anchor_right = 0.883
+margin_left = 372.68
+margin_top = 10.0
+margin_right = 423.68
+margin_bottom = 24.0
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="BehindPlayer" type="TileMap" parent="Navigation2D"]
@@ -1536,4 +1558,5 @@ autostart = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]
+[connection signal="input_event" from="Player" to="UI" method="_on_Player_input_event"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]
