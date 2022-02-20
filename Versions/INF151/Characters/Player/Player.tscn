@@ -1,18 +1,18 @@
 [gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art/red_room_tiles/rusty_pipe.png" type="Texture" id=2]
 [ext_resource path="res://Art/red_room_tiles/james_f2.png" type="Texture" id=3]
+[ext_resource path="res://Art/red_room_tiles/eye_bullet.png" type="Texture" id=4]
 [ext_resource path="res://Art/red_room_tiles/james_f1.png" type="Texture" id=6]
 [ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_hit_anim_f0.png" type="Texture" id=9]
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=11]
 [ext_resource path="res://Characters/Player/FiniteStateMachine.gd" type="Script" id=12]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/weapon_anime_sword.png" type="Texture" id=13]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" type="Texture" id=14]
 [ext_resource path="res://Hitbox.gd" type="Script" id=15]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" type="Texture" id=16]
 [ext_resource path="res://Characters/Player/Gun.gd" type="Script" id=17]
 [ext_resource path="res://Characters/Player/Dash.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Art/special_attack_aoe_effect.png" type="Texture" id=19]
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 16 )
@@ -869,7 +869,7 @@ rotation = 1.26885
 position = Vector2( 5, -4 )
 rotation = -1.39626
 scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 13 )
+texture = ExtResource( 2 )
 offset = Vector2( 0, -11 )
 flip_h = true
 
@@ -914,7 +914,7 @@ visible = false
 modulate = Color( 0, 0, 0, 0.443137 )
 position = Vector2( -3.774, 1.631 )
 scale = Vector2( 7.941, 8.309 )
-texture = ExtResource( 19 )
+texture = ExtResource( 4 )
 
 [node name="Gun" type="Sprite" parent="." index="9"]
 script = ExtResource( 17 )
