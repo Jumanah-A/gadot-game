@@ -23,8 +23,14 @@ func _on_Start_pressed():
 
 
 func _on_Options_pressed():
+#	OS.shell_open("https://discord.gg/nQs4eW8sxp")
 	print("Options pressed")
 
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
+
+func _on_Discord_pressed():
+	OS.shell_open("https://discord.gg/nQs4eW8sxp")
+	pass # Replace with function body.
