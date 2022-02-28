@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Art/M484BulletCollection1.png" type="Texture" id=1]
+[ext_resource path="res://Art/red_room_tiles/eye_bullet.png" type="Texture" id=1]
 [ext_resource path="res://Bullet.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -11,10 +11,10 @@ collision_mask = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.292857, 0.3 )
+scale = Vector2( 1.018, 1.032 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 112, 151, 14, 17 )
+region_rect = Rect2( 7, 9, 11, 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 0.2, 0.2 )

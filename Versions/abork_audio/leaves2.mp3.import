@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/leaves2.mp3-aae1a4460a399379779d5713a6b43a19.mp3str"
+
+[deps]
+
+source_file="res://Assets/abork_audio/leaves2.mp3"
+dest_files=[ "res://.import/leaves2.mp3-aae1a4460a399379779d5713a6b43a19.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

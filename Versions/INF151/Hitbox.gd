@@ -18,4 +18,5 @@ func _ready() -> void:
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	body.take_damage(damage, knockback_direction, knockback_force)
+	Global.enemy_killed()
 

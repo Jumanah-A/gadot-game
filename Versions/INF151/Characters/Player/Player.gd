@@ -39,9 +39,9 @@ func _process(_delta: float) -> void:
 		
 	
 #	restrict charcter to screen size
-#	position += velocity * _delta
-#	position.x = clamp(position.x, 0, get_viewport_rect().size.x)
-#	position.y = clamp(position.y, 0, get_viewport_rect().size.y)
+	position += velocity * _delta
+	#position.x = clamp(position.x, 0, get_viewport_rect().size.x)
+	#position.y = clamp(position.y, 0, get_viewport_rect().size.y)
 
 
 func move() -> void:
