@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_run_anim_f0.png" type="Texture" id=2]
@@ -19,6 +19,15 @@
 [ext_resource path="res://Characters/Player/Gun.gd" type="Script" id=17]
 [ext_resource path="res://Characters/Player/Dash.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Art/special_attack_aoe_effect.png" type="Texture" id=19]
+[ext_resource path="res://Art/2f3694e35bc36913a5bc5fb98dd66194.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 16 )
@@ -43,14 +52,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 4 ) ],
@@ -999,30 +1008,40 @@ tracks/7/keys = {
 
 [node name="Player" instance=ExtResource( 1 )]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 37
 script = ExtResource( 11 )
 
-[node name="Dash" parent="." index="0" instance=ExtResource( 18 )]
+[node name="key2" type="AnimatedSprite" parent="." index="0"]
+frames = SubResource( 19 )
 
-[node name="FiniteStateMachine" parent="." index="1"]
+[node name="Key" type="Sprite" parent="." index="1"]
+position = Vector2( -1.50056, -8.49944 )
+rotation = -0.00138131
+scale = Vector2( 0.204694, 0.186976 )
+texture = ExtResource( 20 )
+normal_map = ExtResource( 20 )
+
+[node name="Dash" parent="." index="2" instance=ExtResource( 18 )]
+
+[node name="FiniteStateMachine" parent="." index="3"]
 script = ExtResource( 12 )
 
-[node name="AnimatedSprite" parent="." index="2"]
+[node name="AnimatedSprite" parent="." index="4"]
 frames = SubResource( 1 )
 animation = "idle"
 
-[node name="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" parent="." index="5"]
 position = Vector2( 0, 6 )
 shape = SubResource( 5 )
 
-[node name="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" parent="." index="6"]
 anims/RESET = SubResource( 2 )
 anims/dead = SubResource( 15 )
 anims/hurt = SubResource( 10 )
 anims/idle = SubResource( 3 )
 anims/run = SubResource( 4 )
 
-[node name="Sword" type="Node2D" parent="." index="5"]
+[node name="Sword" type="Node2D" parent="." index="7"]
 
 [node name="Node2D" type="Node2D" parent="Sword" index="0"]
 position = Vector2( 2.329, -1.343 )
@@ -1066,20 +1085,20 @@ scale = Vector2( 0.999999, 0.999999 )
 shape = SubResource( 8 )
 disabled = true
 
-[node name="AttackResetTimer" type="Timer" parent="." index="6"]
+[node name="AttackResetTimer" type="Timer" parent="." index="8"]
 wait_time = 0.4
 
-[node name="SlowMoveOnAttackTimer" type="Timer" parent="." index="7"]
+[node name="SlowMoveOnAttackTimer" type="Timer" parent="." index="9"]
 wait_time = 0.2
 
-[node name="special_effect" type="Sprite" parent="." index="8"]
+[node name="special_effect" type="Sprite" parent="." index="10"]
 modulate = Color( 0, 0, 0, 0.443137 )
 position = Vector2( -3.774, 1.631 )
 scale = Vector2( 7.941, 8.309 )
 z_index = -1
 texture = ExtResource( 19 )
 
-[node name="Gun" type="Sprite" parent="." index="9"]
+[node name="Gun" type="Sprite" parent="." index="11"]
 script = ExtResource( 17 )
 
 [node name="Position2D" type="Position2D" parent="Gun" index="0"]

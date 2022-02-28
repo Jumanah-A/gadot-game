@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Top-Down Roguelite"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Door/Door.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -103,6 +103,11 @@ dash={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -111,6 +116,7 @@ dash={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Sword"
 2d_physics/layer_5="Bullet"
+2d_physics/layer_6="Objects"
 
 [physics]
 
