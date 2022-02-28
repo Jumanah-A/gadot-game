@@ -1,33 +1,18 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_run_anim_f0.png" type="Texture" id=2]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_idle_anim_f2.png" type="Texture" id=3]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_run_anim_f3.png" type="Texture" id=4]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_run_anim_f2.png" type="Texture" id=5]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_idle_anim_f1.png" type="Texture" id=6]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_idle_anim_f3.png" type="Texture" id=7]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_run_anim_f1.png" type="Texture" id=8]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_hit_anim_f0.png" type="Texture" id=9]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/knight_f_idle_anim_f0.png" type="Texture" id=10]
+[ext_resource path="res://Art/red_room_tiles/rusty_pipe.png" type="Texture" id=2]
+[ext_resource path="res://Art/red_room_tiles/james_f2.png" type="Texture" id=3]
+[ext_resource path="res://Art/red_room_tiles/eye_bullet.png" type="Texture" id=4]
+[ext_resource path="res://Art/james_shadow.png" type="Texture" id=5]
+[ext_resource path="res://Art/red_room_tiles/james_f1.png" type="Texture" id=6]
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=11]
 [ext_resource path="res://Characters/Player/FiniteStateMachine.gd" type="Script" id=12]
-[ext_resource path="res://Art/0x72_DungeonTilesetII_v1.4/frames/weapon_anime_sword.png" type="Texture" id=13]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" type="Texture" id=14]
 [ext_resource path="res://Hitbox.gd" type="Script" id=15]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" type="Texture" id=16]
 [ext_resource path="res://Characters/Player/Gun.gd" type="Script" id=17]
 [ext_resource path="res://Characters/Player/Dash.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Art/special_attack_aoe_effect.png" type="Texture" id=19]
-[ext_resource path="res://Art/2f3694e35bc36913a5bc5fb98dd66194.png" type="Texture" id=20]
-
-[sub_resource type="SpriteFrames" id=19]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 16 )
@@ -47,14 +32,9 @@ region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "hurt",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
@@ -62,7 +42,12 @@ animations = [ {
 "name": "dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
@@ -287,7 +272,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 27.6623, 34.2857 )
+extents = Vector2( 17.8347, 29.3006 )
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -388,7 +373,7 @@ tracks/7/keys = {
 "values": [ SubResource( 8 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("SlashSprite:scale")
+tracks/8/path = NodePath("AttackHitbox/CollisionShape2D:shape:extents")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -397,10 +382,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1.28125, 2.5625 ) ]
+"values": [ Vector2( 17.8347, 29.3006 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AttackHitbox/CollisionShape2D:position")
+tracks/9/path = NodePath("SlashSprite:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -409,10 +394,10 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 24.7, 2.645 ) ]
+"values": [ Vector2( 1.28125, 2.5625 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Node2D:scale")
+tracks/10/path = NodePath("AttackHitbox/CollisionShape2D:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -421,10 +406,10 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Vector2( 24.7, 2.645 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Node2D/Sprite:flip_h")
+tracks/11/path = NodePath("Node2D:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -433,7 +418,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("../special_effect:visible")
@@ -445,31 +430,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("../special_effect:modulate")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 0, 0, 0, 0.443137 ) ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("../special_effect:z_index")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -1 ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -770,139 +731,6 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id=16]
 resource_name = "attack3"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Node2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.6, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.82, -4.517 ), Vector2( 0.82, -4.517 ), Vector2( 16.745, -4.517 ), Vector2( 16.745, -4.517 ), Vector2( 13.225, -4.517 ), Vector2( -2.428, -14.772 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Node2D:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.6, 0.9, 1, 1.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 126.4, 126.4, 90.0, 90.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Node2D:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.6, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.5, 1.5 ), Vector2( 1.5, 1.5 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Node2D/Sprite:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.8, 0.9, 1, 1.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ -33.5, -33.5, -49.0, -87.7, -87.7 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AttackHitbox/CollisionShape2D:shape")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 8 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("AttackHitbox/CollisionShape2D:shape:extents")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 38.928, 12.143 ), Vector2( 38.928, 32.1414 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("AttackHitbox/CollisionShape2D:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 0.6, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("AttackHitbox/CollisionShape2D:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 27.18, 2.327 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("SlashSprite:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("SlashSprite:scale")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("Node2D/Sprite:flip_h")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [sub_resource type="CircleShape2D" id=18]
 radius = 100.0
@@ -976,10 +804,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../special_effect:modulate")
@@ -1008,40 +836,30 @@ tracks/7/keys = {
 
 [node name="Player" instance=ExtResource( 1 )]
 collision_layer = 2
-collision_mask = 37
+collision_mask = 5
 script = ExtResource( 11 )
 
-[node name="key2" type="AnimatedSprite" parent="." index="0"]
-frames = SubResource( 19 )
+[node name="Dash" parent="." index="0" instance=ExtResource( 18 )]
 
-[node name="Key" type="Sprite" parent="." index="1"]
-position = Vector2( -1.50056, -8.49944 )
-rotation = -0.00138131
-scale = Vector2( 0.204694, 0.186976 )
-texture = ExtResource( 20 )
-normal_map = ExtResource( 20 )
-
-[node name="Dash" parent="." index="2" instance=ExtResource( 18 )]
-
-[node name="FiniteStateMachine" parent="." index="3"]
+[node name="FiniteStateMachine" parent="." index="1"]
 script = ExtResource( 12 )
 
-[node name="AnimatedSprite" parent="." index="4"]
+[node name="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 1 )
 animation = "idle"
 
-[node name="CollisionShape2D" parent="." index="5"]
+[node name="CollisionShape2D" parent="." index="3"]
 position = Vector2( 0, 6 )
 shape = SubResource( 5 )
 
-[node name="AnimationPlayer" parent="." index="6"]
+[node name="AnimationPlayer" parent="." index="4"]
 anims/RESET = SubResource( 2 )
 anims/dead = SubResource( 15 )
 anims/hurt = SubResource( 10 )
 anims/idle = SubResource( 3 )
 anims/run = SubResource( 4 )
 
-[node name="Sword" type="Node2D" parent="." index="7"]
+[node name="Sword" type="Node2D" parent="." index="5"]
 
 [node name="Node2D" type="Node2D" parent="Sword" index="0"]
 position = Vector2( 2.329, -1.343 )
@@ -1051,7 +869,7 @@ rotation = 1.26885
 position = Vector2( 5, -4 )
 rotation = -1.39626
 scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 13 )
+texture = ExtResource( 2 )
 offset = Vector2( 0, -11 )
 flip_h = true
 
@@ -1085,20 +903,20 @@ scale = Vector2( 0.999999, 0.999999 )
 shape = SubResource( 8 )
 disabled = true
 
-[node name="AttackResetTimer" type="Timer" parent="." index="8"]
+[node name="AttackResetTimer" type="Timer" parent="." index="6"]
 wait_time = 0.4
 
-[node name="SlowMoveOnAttackTimer" type="Timer" parent="." index="9"]
+[node name="SlowMoveOnAttackTimer" type="Timer" parent="." index="7"]
 wait_time = 0.2
 
-[node name="special_effect" type="Sprite" parent="." index="10"]
+[node name="special_effect" type="Sprite" parent="." index="8"]
+visible = false
 modulate = Color( 0, 0, 0, 0.443137 )
 position = Vector2( -3.774, 1.631 )
 scale = Vector2( 7.941, 8.309 )
-z_index = -1
-texture = ExtResource( 19 )
+texture = ExtResource( 4 )
 
-[node name="Gun" type="Sprite" parent="." index="11"]
+[node name="Gun" type="Sprite" parent="." index="9"]
 script = ExtResource( 17 )
 
 [node name="Position2D" type="Position2D" parent="Gun" index="0"]
