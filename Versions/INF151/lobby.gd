@@ -8,7 +8,9 @@ func _init() -> void:
 	
 	OS.set_window_position(screen_size * 0.5 - window_size * 0.5)
 
-
+func _process(delta):
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
 #func _ready():
 #	Global.node_creation_parent = self
 #
