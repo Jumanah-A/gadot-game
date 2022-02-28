@@ -82,32 +82,24 @@ rect_min_size = Vector2( 0, 135 )
 alignment = 1
 
 [node name="Start" parent="VBoxContainer2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 21.0
-margin_bottom = 41.0
+margin_top = 33.0
+margin_bottom = 53.0
 focus_neighbour_top = NodePath("../Quit")
 focus_neighbour_bottom = NodePath("../Options")
 text = "Start"
 arrow_margin = 38
 
-[node name="Discord" parent="VBoxContainer2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 45.0
-margin_bottom = 65.0
+[node name="Options" parent="VBoxContainer2/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 57.0
+margin_bottom = 77.0
 focus_neighbour_top = NodePath("../Start")
 focus_neighbour_bottom = NodePath("../Quit")
 text = "Discord Server"
 arrow_margin = 70
 
-[node name="Options" parent="VBoxContainer2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 69.0
-margin_bottom = 89.0
-focus_neighbour_top = NodePath("../Start")
-focus_neighbour_bottom = NodePath("../Quit")
-text = "Options"
-arrow_margin = 46
-
 [node name="Quit" parent="VBoxContainer2/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 93.0
-margin_bottom = 113.0
+margin_top = 81.0
+margin_bottom = 101.0
 focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../Start")
 text = "Quit"
@@ -125,6 +117,5 @@ bus = "Menu"
 
 [connection signal="focus_entered" from="VBoxContainer2/VBoxContainer/Start" to="VBoxContainer2/VBoxContainer/Start" method="_on_Start_focus_entered"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Start" to="." method="_on_Start_pressed"]
-[connection signal="pressed" from="VBoxContainer2/VBoxContainer/Discord" to="." method="_on_Discord_pressed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

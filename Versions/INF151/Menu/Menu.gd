@@ -24,18 +24,13 @@ func _process(delta):
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://Game.tscn")
+	get_tree().change_scene("res://lobby.tscn")
 
 
 func _on_Options_pressed():
-#	OS.shell_open("https://discord.gg/nQs4eW8sxp")
-	print("Options pressed")
+	OS.shell_open("https://discord.gg/nQs4eW8sxp")
+#	print("Options pressed")
 
 
 func _on_Quit_pressed():
 	get_tree().quit()
-
-
-func _on_Discord_pressed():
-	OS.shell_open("https://discord.gg/nQs4eW8sxp")
-	pass # Replace with function body.

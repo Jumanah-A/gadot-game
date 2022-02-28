@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Top-Down Roguelite"
-run/main_scene="res://lobby.tscn"
+run/main_scene="res://Menu/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
