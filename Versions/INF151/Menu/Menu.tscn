@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Art/Lava_ingame.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Menu/The_Never-ending_hallway.jpg" type="Texture" id=5]
 [ext_resource path="res://Menu/smoking game.jpg" type="Texture" id=6]
 [ext_resource path="res://Menu/Caretaker-Pic-4-800x450.jpg" type="Texture" id=7]
+[ext_resource path="res://abork_audio/hit3.mp3" type="AudioStream" id=8]
+[ext_resource path="res://abork_audio/guiltar1.mp3" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -110,6 +112,16 @@ focus_neighbour_top = NodePath("../Options")
 focus_neighbour_bottom = NodePath("../Start")
 text = "Quit"
 arrow_margin = 34
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -48.117
+bus = "Menu"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -39.328
+bus = "Menu"
 
 [connection signal="focus_entered" from="VBoxContainer2/VBoxContainer/Start" to="VBoxContainer2/VBoxContainer/Start" method="_on_Start_focus_entered"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Start" to="." method="_on_Start_pressed"]

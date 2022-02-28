@@ -1481,7 +1481,7 @@ texture_progress = ExtResource( 7 )
 tint_over = Color( 0.811765, 0.811765, 0.811765, 1 )
 tint_progress = Color( 0.580392, 0, 0, 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Tween" type="Tween" parent="UI/HealthBar"]
@@ -1491,7 +1491,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 theme = SubResource( 99 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="ScoreLabel" type="Label" parent="UI/UserInterface"]
@@ -1503,7 +1503,7 @@ margin_right = 423.68
 margin_bottom = 24.0
 text = "Score: 0"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
