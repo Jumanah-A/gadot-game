@@ -15,7 +15,12 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
+func _process(delta):
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
+		
+	if $AudioStreamPlayer2.playing == false:
+		$AudioStreamPlayer2.play()
 
 
 func _on_Start_pressed():
