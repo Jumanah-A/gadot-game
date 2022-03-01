@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/red_room_tiles/rusty_pipe.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Art/red_room_tiles/eye_bullet.png" type="Texture" id=4]
 [ext_resource path="res://Art/james_shadow.png" type="Texture" id=5]
 [ext_resource path="res://Art/red_room_tiles/james_f1.png" type="Texture" id=6]
+[ext_resource path="res://Door/key.png" type="Texture" id=7]
 [ext_resource path="res://Characters/Player/Player.gd" type="Script" id=11]
 [ext_resource path="res://Characters/Player/FiniteStateMachine.gd" type="Script" id=12]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" type="Texture" id=14]
@@ -37,14 +38,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
@@ -836,7 +837,7 @@ tracks/7/keys = {
 
 [node name="Player" instance=ExtResource( 1 )]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 37
 script = ExtResource( 11 )
 
 [node name="Dash" parent="." index="0" instance=ExtResource( 18 )]
@@ -916,7 +917,12 @@ position = Vector2( -3.774, 1.631 )
 scale = Vector2( 7.941, 8.309 )
 texture = ExtResource( 4 )
 
-[node name="Gun" type="Sprite" parent="." index="9"]
+[node name="Key" type="Sprite" parent="." index="9"]
+position = Vector2( -0.999999, -21 )
+scale = Vector2( 0.346154, 0.342105 )
+texture = ExtResource( 7 )
+
+[node name="Gun" type="Sprite" parent="." index="10"]
 script = ExtResource( 17 )
 
 [node name="Position2D" type="Position2D" parent="Gun" index="0"]
