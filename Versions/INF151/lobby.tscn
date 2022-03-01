@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI.gd" type="Script" id=2]
@@ -25,7 +25,6 @@
 [ext_resource path="res://Art/red_room_tiles/red_room_up_right_corner.png" type="Texture" id=23]
 [ext_resource path="res://19+ icons/progress bar.png" type="Texture" id=24]
 [ext_resource path="res://lobby.gd" type="Script" id=25]
-[ext_resource path="res://abork_audio/622093__eminyildirim__mystical-ambiance-drone-loopable.wav" type="AudioStream" id=26]
 
 [sub_resource type="Theme" id=40]
 
@@ -836,6 +835,11 @@ max_speed = 100
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( -1, -1 )
 current = true
+limit_left = 1
+limit_top = 1
+limit_right = 925
+limit_bottom = 1405
+editor_draw_limits = true
 
 [node name="FlyingCreature" parent="." instance=ExtResource( 3 )]
 position = Vector2( 264, 187 )
@@ -860,6 +864,5 @@ wait_time = 0.25
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 26 )
 
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]
