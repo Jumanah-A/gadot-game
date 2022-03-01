@@ -94,8 +94,8 @@ margin_top = 57.0
 margin_bottom = 77.0
 focus_neighbour_top = NodePath("../Start")
 focus_neighbour_bottom = NodePath("../Quit")
-text = "Discord Server"
-arrow_margin = 70
+text = "Options"
+arrow_margin = 46
 
 [node name="Quit" parent="VBoxContainer2/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 81.0
