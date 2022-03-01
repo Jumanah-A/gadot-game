@@ -1,12 +1,16 @@
 extends Character
 
 
+
+
 var SwordPoints = 3
 var IsAttacking1 = false
 var IsAttacking2 = false
 var IsAttacking3 = false
 var IsAttackingSpecial = false
+var door = null setget set_door
 export(int) var attacking_move_speed: int = 45
+
 
 onready var sword: Node2D = get_node("Sword")
 onready var sword_hitbox: Area2D = get_node("Sword/AttackHitbox")
@@ -15,6 +19,7 @@ onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnima
 #dash code
 onready var dash = $Dash
 onready var sprite = $AnimatedSprite
+
 
 func _process(_delta: float) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
@@ -30,6 +35,8 @@ func _process(_delta: float) -> void:
 		sword.scale.y = -1
 	elif sword.scale.y == -1 and mouse_direction.x > 0:
 		sword.scale.y = 1
+		
+		
 	
 #	restrict charcter to screen size
 	position += velocity * _delta
@@ -115,3 +122,24 @@ func get_move_direction():
 	return Vector2(
 		int(Input.is_action_pressed("ui_right"))- int(Input.is_action_pressed("ui_left")),
 		int(Input.is_action_pressed("ui_down"))- int(Input.is_action_pressed("ui_up")))
+		
+		
+
+func set_door(new_door):
+	if new_door != null:
+		$Key.show()
+	else:
+		$Key.hide()
+		
+	door = new_door
+		
+func _ready():
+	set_door(null)
+	
+func _unhandled_input(event):
+	if event is InputEventKey and event.is_action_pressed("interact") and door != null:
+		door.enter()
+	
+
+
+
