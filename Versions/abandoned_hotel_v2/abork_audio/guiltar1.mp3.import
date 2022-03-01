@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/guiltar1.mp3-1239dbc122065aeca0e7a784f408bff4.mp3str"
+
+[deps]
+
+source_file="res://Assets/abork_audio/guiltar1.mp3"
+dest_files=[ "res://.import/guiltar1.mp3-1239dbc122065aeca0e7a784f408bff4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

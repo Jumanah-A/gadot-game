@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hit1.mp3-8a4061ce8918c3a6c04aa0a2a41a6c5a.mp3str"
+
+[deps]
+
+source_file="res://Assets/abork_audio/hit1.mp3"
+dest_files=[ "res://.import/hit1.mp3-8a4061ce8918c3a6c04aa0a2a41a6c5a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
