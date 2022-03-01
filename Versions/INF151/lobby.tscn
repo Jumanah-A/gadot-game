@@ -875,10 +875,3 @@ environment = SubResource( 41 )
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
-<<<<<<< HEAD
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_EnemySpawnTimer_timeout"]
-=======
->>>>>>> 8c2d9915c9f226c3f18fe863431422127ff3e60b
