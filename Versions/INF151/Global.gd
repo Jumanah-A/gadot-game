@@ -14,4 +14,4 @@ func enemy_killed():
 	score+=1
 	print("score is")
 	print(score)
-	get_tree().get_root().get_node("Game/UI/UserInterface/ScoreLabel").text = "Score: "+str(score)
+	get_tree().get_root().get_node("Lobby/UI/UserInterface/ScoreLabel").text = "Score: "+str(score)

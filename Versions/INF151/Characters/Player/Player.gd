@@ -21,6 +21,11 @@ onready var dash = $Dash
 onready var sprite = $AnimatedSprite
 
 
+func _physics_process(_delta: float) -> void:
+	velocity = move_and_slide(velocity)
+	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
+
+
 func _process(_delta: float) -> void:
 	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
 	

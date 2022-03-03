@@ -37,8 +37,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=6]
-radius = 4.0
+[sub_resource type="CapsuleShape2D" id=16]
+radius = 7.0
+height = 10.0
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -237,13 +238,12 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=15]
-radius = 4.0
-height = 0.0
+radius = 7.0
+height = 10.0
 
 [node name="FlyingCreature" instance=ExtResource( 1 )]
 script = ExtResource( 6 )
 hp = 6
-max_speed = 80
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource( 3 )
@@ -253,7 +253,7 @@ frames = SubResource( 5 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( 0, 1 )
-shape = SubResource( 6 )
+shape = SubResource( 16 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/RESET = SubResource( 7 )

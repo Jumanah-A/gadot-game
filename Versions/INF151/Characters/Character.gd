@@ -36,6 +36,7 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void:
 		velocity += dir * force
 	else:
 		state_machine.set_state(state_machine.states.dead)
+		Global.enemy_killed()
 		velocity += dir * force * 2
 
 
