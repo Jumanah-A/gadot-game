@@ -944,6 +944,7 @@ max_speed = 100
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 1, 0 )
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="Door" parent="." instance=ExtResource( 26 )]
 position = Vector2( 110, -267 )

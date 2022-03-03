@@ -38,9 +38,9 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "run",
+"name": "hurt",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
@@ -48,9 +48,9 @@ animations = [ {
 "name": "dead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "hurt",
+"name": "run",
 "speed": 5.0
 } ]
 
