@@ -19,4 +19,4 @@ func _on_Doorway_body_exited(body):
 		body.door = null
 		
 func enter():
-	get_tree().change_scene(inside_scn.resource_path)
+	get_tree().change_scene("res://level2.tscn");
