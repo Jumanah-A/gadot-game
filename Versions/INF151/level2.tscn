@@ -944,6 +944,11 @@ max_speed = 100
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 1, 0 )
 current = true
+limit_left = -215
+limit_top = -520
+limit_right = 500
+limit_bottom = 25
+editor_draw_limits = true
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 110, -267 )
