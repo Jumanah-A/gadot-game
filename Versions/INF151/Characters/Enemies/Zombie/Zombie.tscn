@@ -238,7 +238,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=15]
-radius = 7.0
+radius = 9.0
 height = 10.0
 
 [node name="FlyingCreature" instance=ExtResource( 1 )]
